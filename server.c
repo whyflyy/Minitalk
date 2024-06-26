@@ -6,7 +6,7 @@
 /*   By: jcavadas <jcavadas@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:45:07 by jcavadas          #+#    #+#             */
-/*   Updated: 2024/06/21 13:09:30 by jcavadas         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:33:19 by jcavadas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main(void)
 {
-    ft_printf("PID: %d\n", getpid());
-    while (1)
-    {
-        /* code */
-    }
+	ft_printf("PID: %d\n", getpid());
+	while (1)
+	{
+		/* code */
+	}
 }
