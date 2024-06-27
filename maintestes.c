@@ -31,10 +31,15 @@ void printBinary(unsigned char num) {
 
 int main(void)
 {
-	char c = 'c';
+	char *c = "I am tired";
+	int i = 0;
 
-	printf("Character: %c  Binary: ", c);
-	printBinary(c);
-	printf("\n");
-	printf("%d", (c >> 1) & 1);
+	while (c[i])
+	{
+		printf("Character: %c  Binary: ", c[i]);
+		printBinary(c[i]);
+		printf("\n");
+		i++;
+	} //--------------------Works ig BUT HOW???????--------------------------
+	// printf("%d", 1 << 3);
 }
