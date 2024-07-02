@@ -6,7 +6,7 @@
 /*   By: jcavadas <jcavadas@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:45:02 by jcavadas          #+#    #+#             */
-/*   Updated: 2024/06/28 15:40:08 by jcavadas         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:53:27 by jcavadas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	send_size(int pid, int size)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(50);
 		i--;
+		usleep(100);
 	}
 }
 
@@ -37,16 +37,16 @@ void	send_message(int pid, char *str, int size)
 	x = 0;
 	while (i < size)
 	{
-		x = 7;
-		while (x >= 0)
+		x = 8;
+		while (x > 0)
 		{
-			if((str[i] >> x) & 1)
-				kill(pid, SIGUSR2);
-			else
+			if(str[i] & 0b10000000)
 				kill(pid, SIGUSR1);
-			//str[i] = str[i] << 1;
+			else
+				kill(pid, SIGUSR2);
+			str[i] = str[i] << 1;
 			x--;
-			usleep(50);
+			usleep(100);
 		}
 		//ft_printf(" ");
 		i++;
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 	str = argv[2];
 	len = ft_strlen(str);
 	pid = ft_atoi(argv[1]);
+	ft_printf("%d\n", len); //PARA TESTE APAGAR ANTES DE ENTRGAR
 	send_size(pid, len);
 	send_message(pid, str, len);
 
