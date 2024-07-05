@@ -6,7 +6,7 @@
 /*   By: jcavadas <jcavadas@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:45:02 by jcavadas          #+#    #+#             */
-/*   Updated: 2024/07/05 11:53:16 by jcavadas         ###   ########.fr       */
+/*   Updated: 2024/07/05 14:50:44 by jcavadas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_printf("Incorrect usage! It should be: ./client <PID> <Message>");
+		ft_printf("Incorrect usage! It should be: ./client <PID> <Message>\n");
 		return (0);
 	}
 	len = 0;
