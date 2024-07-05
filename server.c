@@ -6,7 +6,7 @@
 /*   By: jcavadas <jcavadas@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:45:07 by jcavadas          #+#    #+#             */
-/*   Updated: 2024/07/02 11:47:51 by jcavadas         ###   ########.fr       */
+/*   Updated: 2024/07/05 11:53:02 by jcavadas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	handler_message(int sig)
 	static char	*str = NULL;
 
 	if (sig == SIGUSR2)
-			c = c << 1;
+		c = c << 1;
 	else
 		c = (c << 1) | 1;
 	i++;
